@@ -1,0 +1,276 @@
+@import url(./reset.css);
+
+/* 1. 宽高看，缩小和放大 */
+body {
+    background: url(../asset/bg2.jpg) no-repeat;
+    background-size: 100% 100vh;
+}
+
+/* 2. 宽高看：宽或高固定 */
+.container {
+    width: 870px;
+    background: #ccc;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    color: #888;
+}
+
+/* .container > * {
+    outline: 1px dashed #000;
+} */
+
+
+
+/* 3. 2个排序的元素，1侧固定，另一侧自动拉伸*/
+.container {
+    display: flex;
+}
+
+.msg-container {
+    width: 600px;
+    /* background: #ccc; */
+}
+
+.info {
+    flex: 1 1 auto;
+}
+
+
+/* 4. 2个上下排序元素 */
+.msg-container .top {
+    height: 430px;
+}
+
+.msg-container .bottom {
+    height: 120px;
+    background-color: #fff;
+}
+
+/* 5. 2个元素上下排列 */
+/* .msg-container .top > * {
+    outline: 1px solid #0ff;
+} */
+
+/* 6. 定高中2个元素：如何划分？一个高固定 */
+.msg-container .top {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-container .top .title {
+    height: 50px;
+    background: #eceff1;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 50px;
+    line-height: 50px;
+    position: relative;
+}
+
+.msg-container .top .title::before {
+    content: '';
+    background: url(../asset/robot.png);
+    background-size: 100% 100%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.msg-container .top .content {
+    flex: 1 1 auto;
+    background-color: #f5f5f5;
+    overflow: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.item .time {
+    color: #ccc;
+    font-size: 12px;
+    text-align: left;
+}
+
+.item .msg {
+    color: #000;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.item .msg p {
+    max-width: 400px;
+    word-break: break-all;
+}
+
+.item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin: 0 15px;
+    border-radius: 50%;
+}
+
+.item.right {
+    flex-direction: row-reverse;
+}
+
+.item.right .time {
+    text-align: right;
+}
+
+.item.right p {
+    background-color: #98e855;
+}
+
+.item.right .msg {
+    align-items: flex-end;
+
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+}
+
+.item p {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    position: relative;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+}
+
+.item p::after {
+    position: absolute;
+    content: '';
+    left: -6px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    border-right: none;
+    transform: rotateZ(45deg);
+    z-index: -1;
+}
+
+.item.right p::after {
+    right: -7px;
+    left: auto;
+    border: 1px solid #d8d8d8;
+    border-left: none;
+    border-bottom: none;
+    background-color: #98e855;
+}
+
+
+.bottom {
+    padding: 10px;
+
+}
+
+/* 上下布局，下方要放在底部 */
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* .form > * {
+    outline: 1px dashed #000;
+} */
+.form .txt {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.form .form-item.button {
+    text-align: right;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.form .form-item.button button {
+    background: #59b573;
+    padding: 0 20px;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+
+.form .form-item.button button:hover {
+    background: #7fc292;
+}
+
+
+.user img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+
+}
+
+.user {
+    margin-top: 50px;
+    margin-left: 10px;
+    display: flex;
+}
+
+
+
+.info {
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info #loginId {
+    font-size: 12px;
+}
+
+.user-info #nickname {
+    font-weight: bold;
+}
+
+
+.info .iconfont {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #a1a0a0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #dfdede;
+}
+
+.info .iconfont:hover {
+    background-color: #bdbbbb;
+}

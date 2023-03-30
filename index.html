@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天机器人-聊天频道</title>
+    <link rel="shortcut icon" href="./asset/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3983904_7weq7z4nxov.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="msg-container">
+            <div class="top">
+                <div class="title">AI 聊天机器人</div>
+                <ul class="content"></ul>
+            </div>
+            <div class="bottom">
+                <form class="msg-form form" action="" method="post">
+                    <div class="form-item">
+                        <input id="txtMsg" class="txt" type="text" placeholder="在这里输入要发送的消息，按回车键即可发送">
+                    </div>
+                    <div class="form-item button">
+                        <button>发送</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="info">
+            <div class="user">
+                <img src="asset/avatar.png" alt="">
+                <div class="user-info">
+                    <p id="nickname"></p>
+                    <p id="loginId"></p>
+                </div>
+            </div>
+            <i class="close  iconfont icon-cha"></i>
+        </div>
+    </div>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/api.js"></script>
+    <script src="./js/index.js"></script>
+
+
+</body>
+
+</html>
